@@ -42,8 +42,22 @@ namespace Prueba
                     if (ContieneLetras(numeros))
                     {
                         var milista = formateoNumeros(numeros);
+                        bool correcto=true;
                         if(milista.Any())
+                        {
+                           foreach(num in milista)
+                        {
+                            if(MenorQueCero(num))
+                            {
+                                correcto=false;
+                                break;
+                            }
+                        }
+                        if(correcto==true)
                         Division(milista);
+                        else
+                        Console.Writeline("La división no es posible realizarla con numeros menores que cero")
+                        }
                     }
                     else
                     {
@@ -87,10 +101,8 @@ namespace Prueba
 
                 }
                
-             
             }
           
-
             return resultado;
         }
 
@@ -102,7 +114,13 @@ namespace Prueba
             float.TryParse(numero, style, culture, out num);
             return num;
         }
-
+        static bool MenorQueCero(float numero)
+        {
+            if(numero<=0)
+            return true;
+            else
+            return false;
+        }
         static void Suma(List<float> numeros_decimales)
         {
             var sum = 0f;
@@ -114,7 +132,7 @@ namespace Prueba
         }
         static void Division(List<float> numeros_decimales)
         {
-            if (numeros_decimales.Count > 2)
+            if (numeros_decimales.Count == 2)
             {
                 Console.WriteLine("Por favor, introduzca SOLO dos números");
             }
