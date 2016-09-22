@@ -45,7 +45,7 @@ namespace Prueba
                         bool correcto=true;
                         if(milista.Any())
                         {
-                           foreach(num in milista)
+                           foreach(float num in milista)
                         {
                             if(MenorQueCero(num))
                             {
@@ -78,12 +78,12 @@ namespace Prueba
         {
             return Regex.IsMatch(str, @"^[a-zA-Z]+$");
         }
-        static List<float> formateoNumeros(string numeros_sinformatear)
+        static List<float> formateoNumeros(string numeros_sin_formatear)
         {
            
             var resultado= new List<float>();
          
-            var numeros_formateados = numeros_sinformatear.Split(',').ToList();
+            var numeros_formateados = numeros_sin_formatear.Split(',').ToList();
            
             foreach (var numero in numeros_formateados)
 
