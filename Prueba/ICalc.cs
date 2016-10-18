@@ -59,7 +59,7 @@ namespace Prueba
         public void AddFun()
         {
             var result = 0F;
-
+            
             foreach (var number in _numbers)
             {
                 result += number;
@@ -89,7 +89,8 @@ namespace Prueba
         
         public  bool ContieneLetras(String str)
         {
-            return Regex.IsMatch(str, @"^[a-zA-Z]+$");
+
+            return Regex.IsMatch(str, "[a-zA-Z]");
         }
         public bool ValidateAll(object[] numbers)
         {
